@@ -1,0 +1,87 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/08/2020  22:34:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\t4.obj TO .\Objects\t4 PRINT (.\Listings\t4.m51) RAMSIZE (256) XDATA (0X0000-0X0FF
+>> F)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\t4.obj (T4)
+
+
+LINK MAP OF MODULE:  .\Objects\t4 (T4)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.2   ABSOLUTE     
+                    0020H.2   000FH.6                *** GAP ***
+            DATA    0030H     0004H     ABSOLUTE     
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0080H     ABSOLUTE     
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0041H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\t4 (T4)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        T4
+  D:0030H         SYMBOL        ARG_0
+  D:0031H         SYMBOL        ARG_1
+  X:0000H         SYMBOL        ARR_1
+  X:0040H         SYMBOL        ARR_2
+  C:0028H         SYMBOL        MY_DATA
+  C:002FH         SYMBOL        MY_STR
+  D:0090H         SYMBOL        P1
+  D:00B0H         SYMBOL        P3
+  C:0000H         SYMBOL        RESET
+  D:0032H         SYMBOL        RES_0
+  D:0033H         SYMBOL        RES_1
+  B:0020H.0       SYMBOL        RQ_0
+  B:0020H.1       SYMBOL        RQ_1
+  C:0026H         SYMBOL        STOP
+  C:001CH         SYMBOL        TCK_DIAG
+  C:001EH         SYMBOL        TCK_LP
+  C:0000H         LINE#         20
+  C:0003H         LINE#         21
+  C:0005H         LINE#         22
+  C:0007H         LINE#         24
+  C:0008H         LINE#         25
+  C:0009H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/08/2020  22:34:13  PAGE 2
+
+
+  C:000CH         LINE#         28
+  C:000DH         LINE#         29
+  C:000EH         LINE#         30
+  C:0010H         LINE#         32
+  C:0012H         LINE#         33
+  C:0013H         LINE#         34
+  C:0015H         LINE#         36
+  C:0017H         LINE#         37
+  C:0018H         LINE#         38
+  C:001BH         LINE#         39
+  C:001CH         LINE#         42
+  C:001EH         LINE#         44
+  C:0021H         LINE#         45
+  C:0024H         LINE#         46
+  C:0026H         LINE#         49
+  -------         ENDMOD        T4
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0041H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=12.2 xdata=128 code=65
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

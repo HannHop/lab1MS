@@ -1,0 +1,4 @@
+".\Objects\t4.obj" 
+TO ".\Objects\t4" 
+PRINT(".\Listings\t4.m51") RAMSIZE(256) 
+XDATA( 0X0000-0X0FFF )

@@ -1,0 +1,101 @@
+A51 MACRO ASSEMBLER  T4                                                                   10/08/2020 22:34:13 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\t4.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE t4.asm SET(SMALL) DEBUG PRINT(.\Listings\t4.lst) OBJECT(.\Objects\t4.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+----                   2     DSEG    AT 30H
+                       3     
+0030                   4     ARG_0:  DS      1
+0031                   5     ARG_1:  DS      1
+0032                   6     RES_0:  DS      1
+0033                   7     RES_1:  DS      1
+                       8     
+----                   9     BSEG    AT 0
+                      10     
+0000                  11     RQ_0:   DBIT    1
+0001                  12     RQ_1:   DBIT    1
+                      13     
+----                  14     XSEG    AT      0
+0000                  15     ARR_1:  DS      64
+0040                  16     ARR_2:  DS      64
+                      17     
+----                  18     CSEG    AT      0
+0000                  19     RESET:
+0000 75300A           20             MOV             ARG_0, #10; Direct addressing + immediate addressing
+0003 7831             21             MOV             R0, #ARG_1; Register addressing + immediate addressing
+0005 7617             22             MOV             @R0, #23;
+                      23             
+0007 18               24             DEC             R0
+0008 16               25             DEC             @R0; What has happend now?
+                      26     
+0009 900028           27             MOV             DPTR, #MY_DATA
+000C E4               28             CLR             A
+000D 93               29             MOVC    A, @A + DPTR
+000E F590             30             MOV             P1, A; There should be 1
+                      31             
+0010 7405             32             MOV             A, #5
+0012 93               33             MOVC    A, @A + DPTR
+0013 F590             34             MOV             P1, A; There should be ?
+                      35             
+0015 7403             36             MOV             A, #3
+0017 93               37             MOVC    A, @A + DPTR
+0018 900040           38             MOV             DPTR, #ARR_2
+001B F0               39             MOVX    @DPTR, A
+                      40             
+001C                  41     TCK_DIAG:       
+001C 7F03             42             MOV             R7,#3
+001E                  43     TCK_LP: 
+001E 30B0FD           44             JNB             P3.0,$
+0021 20B0FD           45             JB              P3.0,$
+0024 DFF8             46             DJNZ    R7,TCK_LP       
+                      47             
+0026                  48     STOP:
+0026 80FE             49             SJMP    STOP
+                      50     
+0028 01020304         51     MY_DATA:        DB      1,2,3,4,5,6,0
+002C 050600                  
+002F 48656C6C         52     MY_STR:         DB      "Hello from MCS-51", 0
+0033 6F206672                
+0037 6F6D204D                
+003B 43532D35                
+003F 3100                    
+A51 MACRO ASSEMBLER  T4                                                                   10/08/2020 22:34:13 PAGE     2
+
+                      53     
+*** WARNING #A41 IN 53 (t4.asm, LINE 53): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  T4                                                                   10/08/2020 22:34:13 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ARG_0. . . . . . .  D ADDR   0030H   A   
+ARG_1. . . . . . .  D ADDR   0031H   A   
+ARR_1. . . . . . .  X ADDR   0000H   A   
+ARR_2. . . . . . .  X ADDR   0040H   A   
+MY_DATA. . . . . .  C ADDR   0028H   A   
+MY_STR . . . . . .  C ADDR   002FH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+RESET. . . . . . .  C ADDR   0000H   A   
+RES_0. . . . . . .  D ADDR   0032H   A   
+RES_1. . . . . . .  D ADDR   0033H   A   
+RQ_0 . . . . . . .  B ADDR   0020H.0 A   
+RQ_1 . . . . . . .  B ADDR   0020H.1 A   
+STOP . . . . . . .  C ADDR   0026H   A   
+TCK_DIAG . . . . .  C ADDR   001CH   A   
+TCK_LP . . . . . .  C ADDR   001EH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

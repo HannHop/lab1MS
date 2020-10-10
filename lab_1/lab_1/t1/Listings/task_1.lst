@@ -1,0 +1,39 @@
+A51 MACRO ASSEMBLER  TASK_1                                                               10/08/2020 17:10:01 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\task_1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE task_1.asm SET(SMALL) DEBUG PRINT(.\Listings\task_1.lst) OBJECT(.\Objec
+                      ts\task_1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Code segment - content of program memory
+----                   2     CSEG    AT      0
+0000 7F0A              3             MOV             R7,#10; Loading immediate data (a constant)     
+0002 759000            4             MOV             P1,#0
+0005                   5     MY_LOOP:        
+0005 0590              6             INC             P1      
+0007 DFFC              7             DJNZ    R7,MY_LOOP; Decrement and jump
+                       8             
+0009                   9     PROG_END:       
+0009 80FE             10             SJMP    PROG_END        ;This stops the processing
+                      11     
+                      12     END ;End of asm file - required by the compiler
+A51 MACRO ASSEMBLER  TASK_1                                                               10/08/2020 17:10:01 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+MY_LOOP. . . . . .  C ADDR   0005H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PROG_END . . . . .  C ADDR   0009H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

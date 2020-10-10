@@ -1,0 +1,101 @@
+A51 MACRO ASSEMBLER  T3                                                                   10/08/2020 22:26:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\t3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE t3.asm SET(SMALL) DEBUG PRINT(.\Listings\t3.lst) OBJECT(.\Objects\t3.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+----                   1     DSEG    AT 30H
+0030                   2     ARG_0:  DS      1
+                       3     
+----                   4     CSEG    AT      0
+                       5     
+0000                   6     RESET:
+                       7             
+0000 759001            8             MOV             P1,#1
+0003 7F0A              9             MOV             R7,#10  
+0005                  10     LP_1:
+0005 E590             11             MOV             A,P1
+0007 23               12             RL              A
+0008 F590             13             MOV             P1,A
+000A DFF9             14             DJNZ    R7, LP_1
+                      15             
+000C 7401             16             MOV             A,#1
+000E                  17     LP_2:
+000E 23               18             RL              A
+000F F590             19             MOV             P1, A
+0011 30E7FA           20             JNB             ACC.7, LP_2
+0014                  21     LP_3:   
+0014 03               22             RR              A
+0015 F590             23             MOV             P1, A
+0017 30E0FA           24             JNB             ACC.0, LP_3
+                      25             
+001A 780E             26             MOV             R0, #14
+001C 790A             27             MOV             R1, #10
+                      28             
+001E                  29     LP_4:
+001E C3               30             CLR             C
+001F E9               31             MOV             A, R1
+0020 98               32             SUBB    A, R0
+0021 6003             33             JZ              LP_4_MATCH
+0023 09               34             INC             R1
+0024 80F8             35             SJMP    LP_4
+0026                  36     LP_4_MATCH:
+                      37             
+0026 7F07             38             MOV             R7,#7
+0028 741E             39             MOV             A,#30   
+002A 75301B           40             MOV             ARG_0, #27
+                      41             
+002D                  42     LP_5:
+002D B53005           43             CJNE    A, ARG_0, VAL_NEQ
+0030 759000           44             MOV             P1,#0
+0033 800A             45             SJMP    LP_5_ITR
+0035                  46     VAL_NEQ:
+0035 4005             47             JC              VAL_LT  
+0037                  48     VAL_GT:
+0037 759001           49             MOV             P1, #1
+003A 8003             50             SJMP    LP_5_ITR        
+003C                  51     VAL_LT: 
+003C 7590FF           52             MOV             P1, #0FFH
+003F                  53     LP_5_ITR:       
+003F 0530             54             INC             ARG_0
+0041 DFEA             55             DJNZ    R7, LP_5        
+                      56             
+0043                  57     STOP:   
+A51 MACRO ASSEMBLER  T3                                                                   10/08/2020 22:26:42 PAGE     2
+
+0043 80FE             58             SJMP    STOP
+                      59     
+                      60     END
+A51 MACRO ASSEMBLER  T3                                                                   10/08/2020 22:26:42 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+ARG_0. . . . . . .  D ADDR   0030H   A   
+LP_1 . . . . . . .  C ADDR   0005H   A   
+LP_2 . . . . . . .  C ADDR   000EH   A   
+LP_3 . . . . . . .  C ADDR   0014H   A   
+LP_4 . . . . . . .  C ADDR   001EH   A   
+LP_4_MATCH . . . .  C ADDR   0026H   A   
+LP_5 . . . . . . .  C ADDR   002DH   A   
+LP_5_ITR . . . . .  C ADDR   003FH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+RESET. . . . . . .  C ADDR   0000H   A   
+STOP . . . . . . .  C ADDR   0043H   A   
+VAL_GT . . . . . .  C ADDR   0037H   A   
+VAL_LT . . . . . .  C ADDR   003CH   A   
+VAL_NEQ. . . . . .  C ADDR   0035H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
